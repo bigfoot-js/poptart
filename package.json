@@ -5,7 +5,7 @@
   "scripts": {
     "test": "grunt spec"
   },
-  "description": "template-description",
+  "description": "A JavaScript plugin for creating smart, mobile-friendly tooltips and popovers.",
   "devDependencies": {
     "bigfoot-dom": ">= 0.0.1",
     "bigfoot-obj": ">= 0.0.1",
@@ -27,9 +27,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/lemonmade/poptart.git"
+    "url": "https://github.com/bigfoot-js/poptart.git"
   },
   "bugs": {
-    "url": "https://github.com/lemonmade/poptart/issues"
+    "url": "https://github.com/bigfoot-js/poptart/issues"
   }
 }
