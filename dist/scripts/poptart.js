@@ -104,7 +104,7 @@ if (typeof module !== "undefined" && module !== null) {
 },{}]},{},[1]);
 
 },{}],3:[function(require,module,exports){
-var ATTR_CSS_MAX_HEIGHT, ATTR_CSS_MAX_WIDTH, POSITIONS, Popover, activePopover, availableSpace, baseFontSize, calculateMaxWidthPixelDimension, calculatePixelDimension, clickHandler, dom, nodeIsDescendantOfNode, nodeIsPopoverDescendant, nodeIsSourceDescendant, obj, oppositeOf, popoverDefaults, popoverPositioner, positionPopovers, positionTooltip, registeredSelectors, removePopovers, setPopoverHeight, setPopoverWidth, triggerPopover;
+var ATTR_CSS_MAX_HEIGHT, ATTR_CSS_MAX_WIDTH, POSITIONS, Poptart, activePopover, availableSpace, baseFontSize, calculateMaxWidthPixelDimension, calculatePixelDimension, clickHandler, dom, nodeIsDescendantOfNode, nodeIsPopoverDescendant, nodeIsSourceDescendant, obj, oppositeOf, popoverDefaults, popoverPositioner, positionPopovers, positionTooltip, registeredSelectors, removePopovers, setPopoverHeight, setPopoverWidth, triggerPopover;
 
 obj = require("bigfoot-obj");
 
@@ -113,6 +113,11 @@ dom = require("bigfoot-dom");
 ATTR_CSS_MAX_WIDTH = "data-poptart-max-width";
 
 ATTR_CSS_MAX_HEIGHT = "data-poptart-max-height";
+
+POSITIONS = {
+  BOTTOM: "bottom",
+  TOP: "top"
+};
 
 registeredSelectors = {};
 
@@ -219,11 +224,6 @@ availableSpace = function(node) {
     window: windowDimensions,
     source: source
   };
-};
-
-POSITIONS = {
-  BOTTOM: "bottom",
-  TOP: "top"
 };
 
 baseFontSize = function() {
@@ -357,12 +357,12 @@ popoverDefaults = {
   inactiveClass: "popover--is-inactive"
 };
 
-Popover = (function() {
-  function Popover() {}
+Poptart = (function() {
+  function Poptart() {}
 
-  Popover.POSITION = POSITIONS;
+  Poptart.POSITIONS = POSITIONS;
 
-  Popover.registerPopover = function(selector, options, callback) {
+  Poptart.registerPopover = function(selector, options, callback) {
     var settings;
     if (typeof options === "function") {
       options = {
@@ -375,7 +375,7 @@ Popover = (function() {
     return registeredSelectors[selector] = settings;
   };
 
-  Popover.triggerPopoverFor = function(node) {
+  Poptart.triggerPopoverFor = function(node) {
     var selector, setting, settings;
     settings = void 0;
     for (selector in registeredSelectors) {
@@ -390,7 +390,7 @@ Popover = (function() {
     }
   };
 
-  return Popover;
+  return Poptart;
 
 })();
 
@@ -398,17 +398,19 @@ document.addEventListener("click", clickHandler);
 
 document.addEventListener("touchend", clickHandler);
 
-if (module.exports != null) {
-  module.exports = Popover;
-} else {
-  window.Popover = Popover;
+if (typeof module !== "undefined" && module !== null) {
+  module.exports = Poptart;
+}
+
+if (typeof window !== "undefined" && window !== null) {
+  window.Poptart = Poptart;
 }
 
 
 
 },{"bigfoot-dom":1,"bigfoot-obj":2}],4:[function(require,module,exports){
-window.Poptart = require("./core.coffee");
 
 
 
-},{"./core.coffee":3}]},{},[3,4]);
+
+},{}]},{},[3,4]);
