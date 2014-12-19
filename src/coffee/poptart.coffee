@@ -203,9 +203,6 @@ setPopoverHeight = (space, position) ->
   content = dom.find(popover, ".bigfoot-footnote__content")
   content.style.maxHeight = "#{maxHeight}px"
 
-
-
-
 positionTooltip = (space, popover) ->
   tooltip = dom.find(activePopover.popover, ".bigfoot-footnote__tooltip")
   tooltip.style.left = "#{popover.offsetWidth * space.leftRelative + 2}px" if tooltip
@@ -258,5 +255,4 @@ class Poptart
 document.addEventListener "click", clickHandler
 document.addEventListener "touchend", clickHandler
 
-module?.exports = Poptart
-window?.Poptart = Poptart
+module.exports = Poptart

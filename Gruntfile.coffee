@@ -7,15 +7,23 @@ module.exports = (grunt) ->
         src: "dist/scripts/poptart.js"
         dest: "dist/scripts/poptart.min.js"
 
+      standalone:
+        src: "dist/scripts/poptart_standalone.js"
+        dest: "dist/scripts/poptart_standalone.min.js"
+
     coffee:
+      build:
+        src: "src/coffee/poptart.coffee"
+        dest: "dist/scripts/poptart.js"
+
       specs:
         src: "spec/poptart_spec.coffee"
         dest: "spec/js/poptart_spec.js"
 
     browserify:
       build:
-        src: "src/coffee/**/*.coffee"
-        dest: "dist/scripts/poptart.js"
+        src: "src/coffee/poptart_standalone.coffee"
+        dest: "dist/scripts/poptart_standalone.js"
         options:
           transform: ["coffeeify"]
 
@@ -46,6 +54,8 @@ module.exports = (grunt) ->
       files: [
         "dist/scripts/poptart.js"
         "dist/scripts/poptart.min.js"
+        "dist/scripts/poptart_standalone.js"
+        "dist/scripts/poptart_standalone.min.js"
         "dist/styles/poptart.css"
       ]
       options:
