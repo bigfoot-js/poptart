@@ -1,0 +1,25 @@
+{
+  "name": "poptart",
+  "main": "dist/scripts/poptart.js",
+  "version": "0.0.1",
+  "authors": [
+    "Chris Sauve <chrismsauve@gmail.com>"
+  ],
+  "description": "template-description",
+  "keywords": [
+
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "spec",
+    "resources",
+    "Gruntfile.coffee",
+    "CONTRIBUTING.md",
+    "package.json"
+  ],
+  "dependencies": {},
+  "devDependencies": {}
+}
